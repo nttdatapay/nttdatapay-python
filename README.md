@@ -1,31 +1,72 @@
-# nttdatapay-python
+# NTTDATA Payment Services India Payment Integration (Python)
 
-## Prerequisites
-- UAT MID and keys provided by the NDPS team
+A simple integration of the **NTTDATA Payment Gateway** using pure Python.
 
-## Installation
-1. Install the python server.
+---
 
-2. Use below commands to install pycryptodome and requests package
-- Install `pycryptodome` for encryption and decryption
-    
-    pip install pycryptodome
-    
-- Install `requests` for rest API calling
-    
-    pip install requests
+## Setup
 
-3. Modify the request.py file
-- Change the configuration details like merchId, password, product etc.
-- Configure `authurl` and `atomcheckout.js` according to UAT and Production environments.
+### 1. Install Dependencies
 
-4. Change the keys provided by NDPS in `AESCipher.py `
+```bash
+pip install pycryptodome requests
+```
 
-5. To handle the response use `response.py`
+---
 
-## How to use
-1. Click on `Pay Now` button, which will open the NTTDATA Payment Gateway.
+### 2. Configuration
 
-2. When the transaction is completed, you will get the response on your return url in this case `response.py`
+Update `config.py` with your UAT or production credentials.
 
+Security Notice:
+Sensitive credentials such as API keys, encryption keys, and salts must never be hardcoded or exposed in source code repositories. It is strongly recommended to use secure storage mechanisms such as environment variables or a secrets management system.
 
+Ensure that access to these credentials is restricted and follows your organization’s security policies.
+
+For detailed security guidelines, refer to the official documentation:
+https://in.nttdatapay.com/docs/integration-guide/Integration-Kits/best-practices
+
+---
+
+### 3. Run the Application
+
+```bash
+python server.py
+```
+
+Open in your browser:
+
+```
+http://127.0.0.1:8000
+```
+
+You may use the default port or change it to any available port if required.
+
+---
+
+## Flow
+
+* Click **Start Payment**
+* The server generates a transaction token via the NDPSI AUTH API
+* The checkout opens as a popup
+* The payment response is handled at `/response`
+
+---
+
+## Notes
+
+* Always validate the signature for all responses
+* Use HTTPS in production environments
+* Ensure production URLs are configured before going live
+
+---
+
+## Project Structure
+
+```
+server.py      # Server and routing logic
+payment.py     # Payment initiation
+response.py    # Response handling
+AESCipher.py   # Encryption and decryption logic
+config.py      # Configuration settings
+```
