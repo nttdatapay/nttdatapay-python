@@ -57,7 +57,7 @@ You may use the default port or change it to any available port if required.
 
 * Always validate the signature for all responses
 * Use HTTPS in production environments
-* Ensure production URLs are configured before going live
+* Ensure production URLs are configured before going live.s
 
 ---
 
