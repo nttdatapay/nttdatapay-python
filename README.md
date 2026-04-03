@@ -1,6 +1,6 @@
-# NTTDATA Payment Services India Payment Integration (Python)
+# NTT DATA Payment Services India Payment Integration (Python)
 
-A simple integration of the **NTTDATA Payment Gateway** using pure Python.
+A simple integration of the **NTT DATA Payment Services India Gateway** using pure Python.
 
 ---
 
