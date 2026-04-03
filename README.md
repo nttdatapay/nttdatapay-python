@@ -1,6 +1,6 @@
-# NTTDATA Payment Services India Payment Integration (Python)
+# NTT DATA Payment Services India Payment Integration (Python)
 
-A simple integration of the **NTTDATA Payment Gateway** using pure Python.
+A simple integration of the **NTT DATA Payment Services India Gateway** using pure Python.
 
 ---
 
@@ -57,7 +57,7 @@ You may use the default port or change it to any available port if required.
 
 * Always validate the signature for all responses
 * Use HTTPS in production environments
-* Ensure production URLs are configured before going live
+* Ensure production URLs are configured before going live.s
 
 ---
 
